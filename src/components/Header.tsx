@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Search, Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { CiladLogo, DsnluLogo } from "./Logos";
+import { CiladLogo } from "./Logos";
 
 interface NavItem {
   label: string;
@@ -116,26 +116,8 @@ export function Header() {
             </div>
           </div>
 
-          {/* Right: Parent University Emblem (Equalized Size) & Mobile Menu Controls */}
+          {/* Right: Mobile Menu Controls */}
           <div className="flex items-center gap-3 shrink-0">
-            <a
-              href="https://dsnlu.ac.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Damodaram Sanjivayya National Law University Official Website"
-              className="hidden sm:flex items-center gap-3 text-right group"
-            >
-              <div className="hidden md:block">
-                <div className="font-lato text-xs font-bold uppercase tracking-wider text-[#000000] group-hover:text-[#0e0e2d]">
-                  DSNLU
-                </div>
-                <div className="font-open text-[11px] text-[#000000]/70">
-                  Visakhapatnam
-                </div>
-              </div>
-              <DsnluLogo className="w-16 h-16 md:w-[72px] md:h-[72px] shrink-0" />
-            </a>
-
             {/* Mobile Search & Menu Buttons */}
             <div className="flex lg:hidden items-center gap-1">
               <button
