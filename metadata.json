@@ -1,0 +1,8 @@
+{
+  "name": "exact replicte cilad.in",
+  "description": "https://www.icts.res.in/",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cilad-white: #ffffff;
+  --color-cilad-black: #000000;
+  --color-cilad-midnight: #0e0e2d;
+
+  --font-pt: "PT Sans", "Open Sans", sans-serif;
+  --font-open: "Open Sans", "PT Sans", sans-serif;
+  --font-lato: "Lato", Helvetica, Arial, sans-serif;
+  --font-source: "Source Sans Pro", sans-serif;
+  --font-serif: "PT Serif", Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  body {
+    font-family: "Source Sans Pro", "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: #000000;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "PT Serif", Georgia, serif;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #000000;
+    margin: 0;
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .icts-container {
+    width: 100%;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .editorial-container {
+    width: 100%;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Primary & Secondary Minimalist Buttons (Strictly #FFFFFF, #000000, #0E0E2D) */
+  .btn-icts {
+    background-color: #0e0e2d;
+    border: 1px solid #0e0e2d;
+    color: #ffffff;
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 9px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .btn-icts:hover {
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffffff;
+  }
+
+  .btn-icts-outline {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    color: #000000;
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 9px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .btn-icts-outline:hover {
+    background-color: #0e0e2d;
+    border-color: #0e0e2d;
+    color: #ffffff;
+  }
+
+  /* Clean Academic Blockquote (No thick left bar) */
+  .icts-blockquote {
+    font-family: "PT Serif", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.7;
+    font-style: italic;
+    color: #000000;
+    padding: 20px 24px;
+    margin: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.18);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+    background-color: #ffffff;
+  }
+
+  .section-header {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #0e0e2d;
+  }
+
+  .title-header {
+    font-family: "PT Serif", Georgia, serif;
+    font-weight: 700;
+    color: #000000;
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .text-justify {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+}
