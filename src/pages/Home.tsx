@@ -144,9 +144,14 @@ export function Home() {
             </div>
             <div className="w-full border-b border-white/20 mt-3 mb-6" />
 
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold text-white leading-[1.15] tracking-tight m-0 mb-8 text-left">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold text-white leading-[1.15] tracking-tight m-0 mb-4 text-left">
               {currentSlide.title}
             </h1>
+
+            <p className="font-open text-sm sm:text-base md:text-[16px] leading-relaxed text-white/90 m-0 mb-8 max-w-2xl text-left">
+              {currentSlide.description}
+            </p>
+
             <div className="flex flex-wrap items-center gap-4 mb-10 sm:mb-14">
               <Link
                 to={currentSlide.ctaTo}
