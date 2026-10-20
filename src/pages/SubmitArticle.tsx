@@ -145,18 +145,38 @@ export function SubmitArticle() {
 
   return (
     <main id="content" className="flex-grow bg-[#ffffff] text-[#000000]">
-      {/* Page Header */}
-      <section className="icts-container py-10 md:py-12 border-b border-black/15">
-        <div className="max-w-3xl space-y-3">
-          <div className="section-header">
-            Contribute to CILAD Blog · DSNLU Visakhapatnam
+      {/* Page Header with Guernica Historical Artwork Backdrop */}
+      <section className="relative w-full bg-[#0a0a0a] text-white overflow-hidden border-b border-black">
+        {/* Background Image: Pablo Picasso's Guernica (1937) */}
+        <div className="absolute inset-0 w-full h-full">
+          <img
+            src="/assets/aistudio/xl_d0a36b6e1947-guernica-feature_44a332aa.jpg"
+            alt="Pablo Picasso, Guernica, 1937 — Artistic reflection on international humanitarian law and civilian protection"
+            className="w-full h-full object-cover object-center filter contrast-[1.2] brightness-[0.7] opacity-65"
+          />
+          {/* Deep Dark Protective Scrim Overlay to ensure 100% typographic clarity */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#000000] via-[#000000]/88 via-45% sm:via-55% to-[#000000]/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent opacity-80" />
+        </div>
+
+        <div className="icts-container relative z-10 py-12 md:py-16">
+          <div className="max-w-3xl space-y-3.5 text-left">
+            <div className="inline-block font-lato text-xs font-bold uppercase tracking-widest text-white/90 border-b border-white/30 pb-1">
+              Contribute to CILAD Blog · DSNLU Visakhapatnam
+            </div>
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight m-0">
+              Manuscript Submission Portal
+            </h1>
+            <p className="font-open text-sm sm:text-base leading-relaxed text-white/90 m-0 max-w-2xl">
+              The Centre for International Law and Allied Disciplines (CILAD), Damodaram Sanjivayya National Law University (DSNLU), invites original, analytical, and accessible contributions from practitioners, academicians, researchers, and PhD scholars working in international law and allied disciplines.
+            </p>
+
+            <div className="pt-2">
+              <span className="font-open text-[11px] text-white/70 italic">
+                HISTORICAL PLATE: Pablo Picasso, Guernica (1937) — Museo Nacional Centro de Arte Reina Sofía, Madrid (Public Domain / Art for Peace &amp; Humanitarian Law)
+              </span>
+            </div>
           </div>
-          <h1 className="font-serif text-3xl md:text-4xl font-bold text-[#000000] m-0">
-            Manuscript Submission Portal
-          </h1>
-          <p className="font-open text-base leading-relaxed text-[#000000]/80 m-0 text-justify">
-            The Centre for International Law and Allied Disciplines (CILAD), Damodaram Sanjivayya National Law University (DSNLU), invites original, analytical, and accessible contributions from practitioners, academicians, researchers, and PhD scholars working in international law and allied disciplines.
-          </p>
         </div>
       </section>
 

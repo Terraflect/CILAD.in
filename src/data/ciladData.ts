@@ -1672,7 +1672,7 @@ export const STUDENT_EDITORIAL_BOARD = [
   {
     index: "05",
     role: "Joint Co-Convener",
-    name: "Ruwa",
+    name: "Ruwa Muneer Ahmed",
   },
 ];
 

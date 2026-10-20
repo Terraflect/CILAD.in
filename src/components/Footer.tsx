@@ -198,10 +198,6 @@ export function Footer() {
                 Visakhapatnam – 531 035, Andhra Pradesh, India
               </p>
               <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#ffffff] shrink-0" />
-                <span>+91 8924 248216 (DSNLU)</span>
-              </div>
-              <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-[#ffffff] shrink-0" />
                 <a
                   href="mailto:cilad@dsnlu.ac.in"

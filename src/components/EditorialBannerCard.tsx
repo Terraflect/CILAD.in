@@ -94,8 +94,8 @@ export function EditorialBannerCard({
   const imagePosition = realWorldConfig?.position || "object-center";
 
   return (
-    <article className="relative w-full overflow-hidden border border-black/25 hover:border-black/75 transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.14)] bg-[#f7f5f0] group">
-      {/* Real-World Background Image Layer — Contextual to Title */}
+    <article className="relative w-full overflow-hidden border-2 border-black/35 hover:border-black transition-all duration-300 shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.18)] bg-[#f7f5f0] group my-4">
+      {/* Real-World Background Image Layer — Contextual to Title with High Visibility & Contrast */}
       {!imageError && (
         <img
           src={imageUrl}
@@ -103,13 +103,13 @@ export function EditorialBannerCard({
           referrerPolicy="no-referrer"
           loading="lazy"
           onError={() => setImageError(true)}
-          className={`absolute inset-0 w-full h-full object-cover ${imagePosition} transition-transform duration-700 ease-out group-hover:scale-105`}
+          className={`absolute inset-0 w-full h-full object-cover ${imagePosition} filter contrast-[1.3] saturate-[1.25] brightness-[1.05] transition-transform duration-700 ease-out group-hover:scale-105`}
         />
       )}
 
-      {/* Balanced Protective Gradient Scrim: Ensures Black Typography is 100% Crisp on Left While Real-World Image Shines on Right */}
+      {/* Balanced Protective Gradient Scrim: Crisp White on Left for Text, Clear High-Visibility Image on Right */}
       <div
-        className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/15 sm:from-white/95 sm:via-white/75 sm:to-transparent pointer-events-none z-[1]"
+        className="absolute inset-0 bg-gradient-to-r from-white via-white/70 via-35% sm:via-42% to-transparent pointer-events-none z-[1]"
         aria-hidden="true"
       />
 

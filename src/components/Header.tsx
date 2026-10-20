@@ -26,7 +26,7 @@ const NAV_ITEMS: NavItem[] = [
   {
     label: "Editorials",
     to: "/editorials",
-    matchPrefixes: ["/editorials", "/article", "/submit"],
+    matchPrefixes: ["/editorials", "/article"],
     children: [
       { label: "All Editorials & Archive", to: "/editorials" },
       {
@@ -53,6 +53,11 @@ const NAV_ITEMS: NavItem[] = [
   {
     label: "Our Team",
     to: "/team",
+  },
+  {
+    label: "Contribute",
+    to: "/submit",
+    matchPrefixes: ["/submit", "/contribute"],
   },
   {
     label: "Contact",
@@ -91,27 +96,27 @@ export function Header() {
   };
 
   return (
-    <header className="w-full bg-[#ffffff] text-[#000000] border-b border-black/15">
+    <header className="w-full bg-[#ffffff] text-[#000000] border-b border-black/15 shadow-xs">
       {/* Institutional Branding Row */}
-      <div className="icts-container py-5 md:py-6">
+      <div className="icts-container py-6 md:py-7">
         <div className="flex items-center justify-between gap-6">
           {/* Left: CILAD Logo + Full Name + DSNLU Affiliation */}
-          <div className="flex items-center gap-4 min-w-0">
+          <div className="flex items-center gap-5 min-w-0">
             <Link
               to="/"
               aria-label="Centre for International Law and Allied Disciplines Home"
-              className="shrink-0"
+              className="shrink-0 transition-transform duration-300 hover:scale-105"
             >
-              <CiladLogo className="w-16 h-16 md:w-[72px] md:h-[72px]" />
+              <CiladLogo className="w-16 h-16 md:w-[76px] md:h-[76px] drop-shadow-sm" />
             </Link>
-            <div className="min-w-0">
+            <div className="min-w-0 space-y-1">
               <Link to="/" className="block group">
-                <div className="font-serif text-lg sm:text-xl md:text-[23px] font-bold text-[#000000] leading-tight group-hover:text-[#0e0e2d] transition-colors">
+                <div className="font-serif text-lg sm:text-xl md:text-[24px] font-bold text-[#000000] leading-tight group-hover:text-[#0e0e2d] transition-colors">
                   Centre for International Law and Allied Disciplines (CILAD)
                 </div>
               </Link>
-              <div className="font-open text-xs sm:text-[13px] text-[#000000]/75 mt-1">
-                Damodaram Sanjivayya National Law University (DSNLU), Visakhapatnam, Andhra Pradesh
+              <div className="font-open text-xs sm:text-[13px] text-[#000000]/75">
+                Damodaram Sanjivayya National Law University (DSNLU)
               </div>
             </div>
           </div>
@@ -148,11 +153,11 @@ export function Header() {
       {/* Primary Navigation Bar */}
       <nav
         aria-label="Primary Navigation"
-        className="w-full bg-[#000000] text-[#ffffff] border-t border-black"
+        className="w-full bg-[#000000] text-[#ffffff] border-t border-black shadow-sm"
       >
         <div className="icts-container bg-[#000000]">
-          <div className="hidden lg:flex items-center justify-between min-h-[46px] bg-[#000000]">
-            <ul className="flex items-center gap-1 list-none m-0 p-0">
+          <div className="hidden lg:flex items-center justify-between min-h-[48px] bg-[#000000]">
+            <ul className="flex items-center gap-0.5 list-none m-0 p-0">
               {NAV_ITEMS.map((item) => {
                 const active = isItemActive(item);
                 const hasChildren = Boolean(item.children?.length);
@@ -171,7 +176,7 @@ export function Header() {
                     <Link
                       to={item.to}
                       onClick={() => setOpenDropdown(null)}
-                      className={`inline-flex items-center gap-1 px-3.5 py-3 font-lato text-[13px] font-semibold tracking-wide whitespace-nowrap transition-colors border-b-2 ${
+                      className={`inline-flex items-center gap-1.5 px-4 py-3 font-lato text-[13px] font-semibold tracking-wide whitespace-nowrap transition-all border-b-2 ${
                         active
                           ? "bg-[#0e0e2d] border-[#ffffff] text-[#ffffff]"
                           : "border-transparent text-[#ffffff]/90 hover:text-[#ffffff] hover:bg-[#0e0e2d]"
@@ -184,7 +189,7 @@ export function Header() {
                     </Link>
 
                     {hasChildren && openDropdown === item.label && (
-                      <ul className="absolute left-0 top-full min-w-[240px] bg-[#000000] border border-white/20 py-1.5 m-0 list-none z-50">
+                      <ul className="absolute left-0 top-full min-w-[240px] bg-[#000000] border border-white/20 py-1.5 m-0 list-none z-50 shadow-xl">
                         {item.children!.map((child) => (
                           <li key={child.to}>
                             <Link
@@ -203,15 +208,15 @@ export function Header() {
               })}
             </ul>
 
-            {/* Search Toggle */}
-            <div className="flex items-center gap-3">
+            {/* Search Toggle Button */}
+            <div className="flex items-center">
               <button
                 type="button"
                 onClick={() => setSearchOpen(!searchOpen)}
                 aria-label="Search editorials and publications"
-                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 font-lato text-xs font-semibold text-[#ffffff]/90 hover:text-[#ffffff] cursor-pointer whitespace-nowrap"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/10 hover:bg-white/20 text-white font-lato text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer rounded-none border border-white/20"
               >
-                <Search className="w-3.5 h-3.5 text-[#ffffff]" />
+                <Search className="w-3.5 h-3.5 text-white" />
                 <span>Search</span>
               </button>
             </div>

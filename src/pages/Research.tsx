@@ -20,36 +20,53 @@ export function Research() {
 
   return (
     <main id="content" className="flex-grow bg-[#ffffff] text-[#000000]">
-      {/* Page Header */}
-      <section className="icts-container py-10 md:py-12 border-b border-black/15">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-          <div className="max-w-3xl space-y-3">
-            <div className="section-header">
-              Thematic Inquiry · 08 Core Domains
-            </div>
-            <h1 className="font-serif text-3xl md:text-4xl font-bold text-[#000000] m-0">
-              Research Areas &amp; Legal Frameworks
-            </h1>
-            <p className="font-open text-base leading-relaxed text-[#000000]/80 m-0">
-              CILAD structures its doctrinal and interdisciplinary scholarship across eight interconnected domains of public and private international law, examining multilateral treaties, international judicial decisions, and evolving state practice.
-            </p>
-          </div>
+      {/* Page Header with The Great Wave off Kanagawa Artwork Backdrop */}
+      <section className="relative w-full bg-[#0a0a0a] text-white overflow-hidden border-b border-black">
+        <div className="absolute inset-0 w-full h-full">
+          <img
+            src="/images/great-wave.jpg"
+            alt="Katsushika Hokusai, The Great Wave off Kanagawa, c. 1831"
+            className="w-full h-full object-cover object-center filter contrast-[1.35] brightness-[0.95] opacity-90"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/90 via-[#0a0a0a]/65 via-50% to-[#0a0a0a]/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent opacity-80" />
+        </div>
 
-          <div className="flex flex-wrap items-center gap-2 shrink-0">
-            {clusters.map((cluster) => (
-              <button
-                key={cluster}
-                type="button"
-                onClick={() => setSelectedCluster(cluster)}
-                className={`px-3 py-1.5 font-lato text-xs font-bold uppercase tracking-wider border cursor-pointer transition-colors ${
-                  selectedCluster === cluster
-                    ? "bg-[#0e0e2d] text-[#ffffff] border-[#0e0e2d]"
-                    : "bg-[#ffffff] text-[#000000] border-black/25 hover:border-[#0e0e2d]"
-                }`}
-              >
-                {cluster === "all" ? "All Domains (08)" : cluster}
-              </button>
-            ))}
+        <div className="icts-container relative z-10 py-12 md:py-16">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+            <div className="max-w-3xl space-y-3.5 text-left">
+              <div className="inline-block font-lato text-xs font-bold uppercase tracking-widest text-white/90 border-b border-white/30 pb-1">
+                Thematic Inquiry · 08 Core Domains
+              </div>
+              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight m-0">
+                Research Areas &amp; Legal Frameworks
+              </h1>
+              <p className="font-open text-sm sm:text-base leading-relaxed text-white/90 m-0 max-w-2xl">
+                CILAD structures its doctrinal and interdisciplinary scholarship across eight interconnected domains of public and private international law, examining multilateral treaties, international judicial decisions, and evolving state practice.
+              </p>
+              <div className="pt-2">
+                <span className="font-open text-[11px] text-white/70 italic">
+                  HISTORICAL PLATE: Katsushika Hokusai, The Great Wave off Kanagawa (c. 1831) — Metropolitan Museum of Art / Public Domain
+                </span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2 shrink-0">
+              {clusters.map((cluster) => (
+                <button
+                  key={cluster}
+                  type="button"
+                  onClick={() => setSelectedCluster(cluster)}
+                  className={`px-3.5 py-2 font-lato text-xs font-bold uppercase tracking-wider border cursor-pointer transition-colors ${
+                    selectedCluster === cluster
+                      ? "bg-white text-black border-white"
+                      : "bg-black/40 text-white border-white/40 hover:bg-white/20 hover:border-white"
+                  }`}
+                >
+                  {cluster === "all" ? "All Domains (08)" : cluster}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
