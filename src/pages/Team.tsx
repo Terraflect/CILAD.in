@@ -29,9 +29,6 @@ export function Team() {
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight m-0">
               Our Team &amp; Governance
             </h1>
-            <p className="font-open text-sm sm:text-base leading-relaxed text-white/90 m-0 max-w-2xl">
-              University Patrons, Honorary Chairperson, Faculty Committee Members, Founding Leadership, and Student Editorial &amp; Convening Board of the Centre for International Law and Allied Disciplines at Damodaram Sanjivayya National Law University.
-            </p>
             <div className="pt-2">
               <span className="font-open text-[11px] text-white/70 italic">
                 HISTORICAL PLATE: Raja Ravi Varma, Mohini and Rugmangada (1899) — Sree Chitra Art Gallery, Trivandrum (Public Domain)
